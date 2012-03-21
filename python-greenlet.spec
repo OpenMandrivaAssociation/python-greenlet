@@ -1,15 +1,14 @@
 %define module greenlet
 
 Name:           python-%{module}
-Version:        0.3.1
-Release:        %mkrel 1
+Version:        0.3.4
+Release:        1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
 URL:            http://pypi.python.org/pypi/%{module}
-Source0:        http://pypi.python.org/packages/source/g/%{module}/%{module}-%{version}.tar.gz
-BuildRequires:  python-devel
-BuildRequires:  python-setuptools
+Source0:		http://pypi.python.org/packages/source/g/%{module}/%{module}-%{version}.zip
+BuildRequires:  python-devel, python-setuptools, python-sphinx
 BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
@@ -30,15 +29,20 @@ This package contains header files required for C modules development.
 %setup -q -n %{module}-%{version}
 
 %build
-CFLAGS="$RPM_OPT_FLAGS" %{__python} setup.py build
+PYTHONDONTWRITEBYTECODE= %{__python} setup.py build
 chmod 644 benchmarks/*.py
+pushd doc
+export PYTHONPATH=`dir -1d ../build/lib* | head -1`
+%__make html
+popd
 
 %install
-rm -rf $RPM_BUILD_ROOT
-%{__python} setup.py install --root $RPM_BUILD_ROOT --install-purelib=%{python_sitearch}
+rm -rf %{buildroot}
+%{__python} setup.py install --root %{buildroot} --install-purelib=%{python_sitearch}
 
 %files 
 %defattr(-,root,root)
+%doc doc/_build/html
 %{python_sitearch}/*
 
 %files devel
