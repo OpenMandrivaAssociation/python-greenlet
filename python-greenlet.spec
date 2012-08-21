@@ -1,8 +1,16 @@
-%define module greenlet
+%define module	greenlet
+%define	name	python-%{module}
+%define	version	0.4.0
+%define	rel		1
+%if %mdkversion < 201100
+%define release	%mkrel %{rel}
+%else
+%define release	%{rel}
+%endif
 
-Name:           python-%{module}
-Version:        0.3.4
-Release:        1
+Name:           %{name}
+Version:        %{version}
+Release:        %{release}
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
@@ -39,6 +47,9 @@ popd
 %install
 rm -rf %{buildroot}
 %{__python} setup.py install --root %{buildroot} --install-purelib=%{python_sitearch}
+
+%check
+./run-tests.py
 
 %files 
 %defattr(-,root,root)
