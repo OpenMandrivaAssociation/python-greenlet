@@ -60,3 +60,22 @@ rm -rf %{buildroot}
 %defattr(-,root,root,-)
 %{_includedir}/python*/%{module}
 
+
+
+%changelog
+* Wed Aug 22 2012 Lev Givon <lev@mandriva.org> 0.4.0-1
++ Revision: 815588
+- Update to 0.4.0.
+
+* Wed Mar 21 2012 Lev Givon <lev@mandriva.org> 0.3.4-1
++ Revision: 785946
+- Update to 0.3.4.
+
+* Wed Jun 08 2011 Antoine Ginies <aginies@mandriva.com> 0.3.1-1
++ Revision: 683252
+- import python-greenlet
+
+
+* Wed Jun 8 2011 Antoine Ginies <aginies@mandriva.com> 0.10.7
+- first release for Mandriva
+
