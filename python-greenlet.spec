@@ -9,15 +9,14 @@
 %endif
 
 Name:           %{name}
-Version:        %{version}
-Release:        %{release}
+Version:        0.4.1
+Release:        1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
 URL:            http://pypi.python.org/pypi/%{module}
-Source0:		http://pypi.python.org/packages/source/g/%{module}/%{module}-%{version}.zip
+Source0:		http://pypi.python.org/packages/source/g/greenlet/greenlet-%{version}.zip
 BuildRequires:  python-devel, python-setuptools, python-sphinx
-BuildRoot:      %{_tmppath}/%{name}-%{version}-build
 
 %description
 The greenlet package is a spin-off of Stackless, a version of CPython
@@ -45,16 +44,14 @@ export PYTHONPATH=`dir -1d ../build/lib* | head -1`
 popd
 
 %install
-rm -rf %{buildroot}
-%{__python} setup.py install --root %{buildroot} --install-purelib=%{python_sitearch}
+%{__python} setup.py install --root %{buildroot} --install-purelib=%{py_platsitedir}
 
 %check
 ./run-tests.py
 
 %files 
-%defattr(-,root,root)
 %doc doc/_build/html
-%{python_sitearch}/*
+%{py_platsitedir}/*
 
 %files devel
 %defattr(-,root,root,-)
@@ -78,4 +75,5 @@ rm -rf %{buildroot}
 
 * Wed Jun 8 2011 Antoine Ginies <aginies@mandriva.com> 0.10.7
 - first release for Mandriva
+
 
