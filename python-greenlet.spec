@@ -1,15 +1,11 @@
 %define module	greenlet
-%define	name	python-%{module}
-%define	version	0.4.0
 %define	rel		1
 %if %mdkversion < 201100
-%define release	%mkrel %{rel}
 %else
-%define release	%{rel}
 %endif
 
-Name:           %{name}
-Version:        0.4.1
+Name:           python-%{module}
+Version:        0.4.2
 Release:        1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
@@ -36,7 +32,7 @@ This package contains header files required for C modules development.
 %setup -q -n %{module}-%{version}
 
 %build
-PYTHONDONTWRITEBYTECODE= %{__python} setup.py build
+PYTHONDONTWRITEBYTECODE= python setup.py build
 chmod 644 benchmarks/*.py
 pushd doc
 export PYTHONPATH=`dir -1d ../build/lib* | head -1`
@@ -44,7 +40,7 @@ export PYTHONPATH=`dir -1d ../build/lib* | head -1`
 popd
 
 %install
-%{__python} setup.py install --root %{buildroot} --install-purelib=%{py_platsitedir}
+python setup.py install --root %{buildroot} --install-purelib=%{py_platsitedir}
 
 %check
 ./run-tests.py
@@ -75,5 +71,6 @@ popd
 
 * Wed Jun 8 2011 Antoine Ginies <aginies@mandriva.com> 0.10.7
 - first release for Mandriva
+
 
 
