@@ -5,13 +5,13 @@
 %endif
 
 Name:           python-%{module}
-Version:        0.4.2
-Release:        2
+Version:	0.4.15
+Release:	1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
 URL:            http://pypi.python.org/pypi/%{module}
-Source0:		http://pypi.python.org/packages/source/g/greenlet/greenlet-%{version}.zip
+Source0:	https://files.pythonhosted.org/packages/f8/e8/b30ae23b45f69aa3f024b46064c0ac8e5fcb4f22ace0dca8d6f9c8bbe5e7/greenlet-0.4.15.tar.gz
 BuildRequires:  python-devel, python-setuptools, python-sphinx
 
 %description

@@ -1,5 +1,2 @@
-removed_sources:
-  greenlet-0.4.0.zip: 43b22daa449ae6222e54dde1f9121c81e8d7d913
-  greenlet-0.4.1.zip: ca2f589a63322b5752ef4e0de3072a5b51f7d3b7
 sources:
-  greenlet-0.4.2.zip: 506340a1f6b66e5ddea4e1475ea5e0201c66a758
+  greenlet-0.4.15.tar.gz: 0da9c069c38bf297923a1da0c601ef71c07ffb6d
