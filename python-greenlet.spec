@@ -1,13 +1,14 @@
 %define module	greenlet
 
 Name:           python-%{module}
-Version:	1.1.2
+Version:	1.1.3
 Release:	1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
 URL:            http://pypi.python.org/pypi/%{module}
-Source0:	https://files.pythonhosted.org/packages/0c/10/754e21b5bea89d0e73f99d60c83754df7cc64db74f47d98ab187669ce341/greenlet-1.1.2.tar.gz
+Source0:        https://github.com/python-greenlet/greenlet/archive/%{version}/%{module}-%{version}.tar.gz
+
 BuildRequires:  python-devel, python-setuptools
 
 %description
