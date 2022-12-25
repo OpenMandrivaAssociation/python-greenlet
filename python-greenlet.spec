@@ -1,7 +1,7 @@
 %define module	greenlet
 
 Name:           python-%{module}
-Version:	1.1.3.post0
+Version:	2.0.1
 Release:	1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
