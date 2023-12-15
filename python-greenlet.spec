@@ -1,8 +1,8 @@
 %define module	greenlet
 
 Name:           python-%{module}
-Version:	2.0.2
-Release:	2
+Version:	3.0.2
+Release:	1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
