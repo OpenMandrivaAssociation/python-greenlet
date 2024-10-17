@@ -6,7 +6,7 @@ Release:	1
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
-URL:            http://pypi.python.org/pypi/%{module}
+URL:            https://pypi.python.org/pypi/%{module}
 Source0:        https://github.com/python-greenlet/greenlet/archive/%{version}/%{module}-%{version}.tar.gz
 
 BuildRequires:  python-devel, python-setuptools
