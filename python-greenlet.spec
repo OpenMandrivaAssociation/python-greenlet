@@ -2,7 +2,7 @@
 
 Name:           python-%{module}
 Version:	3.2.2
-Release:	1
+Release:	2
 Summary:        Lightweight in-process concurrent programming
 Group:          Development/Python
 License:        MIT
