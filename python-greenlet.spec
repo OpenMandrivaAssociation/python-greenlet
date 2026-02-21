@@ -1,14 +1,14 @@
 %define module	greenlet
 
-Name:		python-%{module}
-Version:	3.3.1
+Name:		python-greenlet
+Version:	3.3.2
 Release:	1
 Summary:	Lightweight in-process concurrent programming
 Group:		Development/Python
 License:	MIT
 URL:		https://pypi.python.org/pypi/greenlet
 Source0:	https://github.com/python-greenlet/greenlet/archive/%{version}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
-
+BuildSystem:	python
 BuildRequires:	pkgconfig(python)
 BuildRequires:  python-objgraph
 BuildRequires:  python%{pyver}dist(pip)
@@ -30,16 +30,9 @@ Requires:       %{name} = %{EVRD}
 %description devel
 This package contains header files required for C modules development.
 
-%prep
-%setup -q -n %{module}-%{version}
-
-%build
+%build -p
 export CFLAGS="%{optflags} -fno-tree-dominator-opts -fno-strict-aliasing"
 export LDFLAGS="%{optflags} -lpython%{pyver}"
-%py_build
-
-%install
-%py_install
 
 %files
 %doc README.rst
