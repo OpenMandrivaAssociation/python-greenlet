@@ -1,20 +1,21 @@
 %define module	greenlet
 
 Name:		python-greenlet
-Version:	3.3.2
+Version:	3.4.0
 Release:	1
 Summary:	Lightweight in-process concurrent programming
 Group:		Development/Python
 License:	MIT
 URL:		https://pypi.python.org/pypi/greenlet
-Source0:	https://github.com/python-greenlet/greenlet/archive/%{version}/%{module}-%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:	https://github.com/python-greenlet/greenlet/archive/%{version}/%{name}-%{version}.tar.gz
+
 BuildSystem:	python
 BuildRequires:	pkgconfig(python)
-BuildRequires:  python-objgraph
-BuildRequires:  python%{pyver}dist(pip)
-BuildRequires:  python%{pyver}dist(psutil)
-BuildRequires:  python%{pyver}dist(setuptools)
-BuildRequires:  python%{pyver}dist(wheel)
+BuildRequires:	python%{pyver}dist(objgraph)
+BuildRequires:	python%{pyver}dist(pip)
+BuildRequires:	python%{pyver}dist(psutil)
+BuildRequires:	python%{pyver}dist(setuptools)
+BuildRequires:	python%{pyver}dist(wheel)
 
 %description
 The greenlet package is a spin-off of Stackless, a version of CPython
