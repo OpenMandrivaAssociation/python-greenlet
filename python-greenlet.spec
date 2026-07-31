@@ -1,7 +1,7 @@
 %define module	greenlet
 
 Name:		python-greenlet
-Version:	3.5.1
+Version:	3.5.4
 Release:	1
 Summary:	Lightweight in-process concurrent programming
 Group:		Development/Python
