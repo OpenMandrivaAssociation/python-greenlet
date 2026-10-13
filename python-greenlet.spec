@@ -2,7 +2,7 @@
 
 Name:		python-greenlet
 Version:	3.5.4
-Release:	1
+Release:	2
 Summary:	Lightweight in-process concurrent programming
 Group:		Development/Python
 License:	MIT
@@ -10,8 +10,7 @@ URL:		https://pypi.python.org/pypi/greenlet
 Source0:	https://github.com/python-greenlet/greenlet/archive/%{version}/%{name}-%{version}.tar.gz
 
 BuildSystem:	python
-BuildRequires:	pkgconfig(python)
-BuildRequires:	python%{pyver}dist(objgraph)
+BuildRequires:	pkgconfig(python3)
 BuildRequires:	python%{pyver}dist(pip)
 BuildRequires:	python%{pyver}dist(psutil)
 BuildRequires:	python%{pyver}dist(setuptools)
